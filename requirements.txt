@@ -1,0 +1,10 @@
+runpod
+pillow
+fastapi
+uvicorn
+numpy
+transformers
+diffusers
+accelerate
+safetensors
+opencv-python-headless
