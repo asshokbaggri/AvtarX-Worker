@@ -1,12 +1,9 @@
-FROM runpod/worker:latest
+FROM runpod/worker:py3.10-cuda12.1
 
-# Install dependencies
-COPY requirements.txt /requirements.txt
-RUN pip install --upgrade pip
-RUN pip install -r /requirements.txt
-
-# Copy app files
-COPY . /app
 WORKDIR /app
 
-CMD ["python3", "-u", "rp_handler.py"]
+COPY . /app
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+CMD ["python3", "worker.py"]
